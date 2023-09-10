@@ -1,4 +1,5 @@
 import React from 'react';
+import CountryDetails from '../CountyDetails/CountryDetails';
 
 const Country = ({ country, handleVisitedCountries }) => {
   const { name, flags } = country;
@@ -11,11 +12,16 @@ const Country = ({ country, handleVisitedCountries }) => {
       <h3 className='text-center'>{name.common}</h3>
       <img className='w-[200px] h-[200px] mx-auto' src={flags.png} alt='' />
       <button
-        onClick={()=>handleVisitedCountries(country)}
+        onClick={() => handleVisitedCountries(country)}
         className='btn m-2 capitalize btn-primary block mx-auto'
       >
         Visit!
       </button>
+      <hr />
+      <CountryDetails
+        country={country}
+        handleVisitedCountries={handleVisitedCountries}
+      />
     </div>
   );
 };
